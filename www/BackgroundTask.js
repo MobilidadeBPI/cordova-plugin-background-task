@@ -1,26 +1,27 @@
 var utils = require('cordova/utils'), 
     exec = require('cordova/exec');
 
-module.exports = {
-  startInBackground: function(taskCallback, failureCallback) {
+var BackgroundTask = {
+	startInBackground: function(successCallback, failureCallback) {
     var id = utils.createUUID();
 
     var task = {
       stop: function() {
-        exec(taskCallback, failureCallback, "BackgroundTask", "stopInBackground", [id]);
+        exec(successCallback, failureCallback, "BackgroundTask", "stopInBackground", [id]);
       }
     };
 
-    var win = function() {
-      if(taskCallback) taskCallback(task);
+    var success = function() {
+      if(successCallback) successCallback(task);
     }
 
     var fail = function() {
       if(failureCallback) failureCallback();
     }
 
-    exec(win, fail, "BackgroundTask", "startInBackground", [id]);
+    exec(success, fail, "BackgroundTask", "startInBackground", [id]);
 
     return task;
   }
 };
+module.exports = BackgroundTask;

@@ -3,14 +3,14 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="backgroundtask"
-    version="0.0.1">
+    version="0.3.6">
 
     <name>Background Task</name>
     <description>Cordova Background Task Plugin</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,backgroun,task</keywords>
-    <repo>https://github.com/mllm/cordova-plugin-background-task</repo>
-    <issue>https://github.com/mllm/cordova-plugin-backgroun-task/issues</issue>
+    <keywords>cordova,background,task</keywords>
+    <repo>https://github.com/MobilidadeBPI/cordova-plugin-background-task</repo>
+    <issue>https://github.com/MobilidadeBPI/cordova-plugin-background-task/issues</issue>
 
     <js-module src="www/BackgroundTask.js" name="BackgroundTask">
         <clobbers target="BackgroundTask" />

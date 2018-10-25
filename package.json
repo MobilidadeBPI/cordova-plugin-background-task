@@ -1,0 +1,30 @@
+{
+  "name": "backgroundtask",
+  "version": "0.3.6",
+  "description": "Start and stop background tasks",
+  "cordova": {
+    "id": "backgroundtask",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MobilidadeBPI/cordova-plugin-background-task"
+  },
+  "keywords": [
+    "background",
+    "task",
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "BPI",
+  "license": "BPI"
+}
