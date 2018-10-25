@@ -4,15 +4,15 @@
 
 @interface CDVBackgroundTaskData: NSObject
 
-@property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTaskId;
-@property (nonatomic, assign) NSString *callbackId;
+@property (nonatomic) UIBackgroundTaskIdentifier backgroundTaskId;
+@property (nonatomic, strong) NSString *callbackId;
 
 @end
 
 
 @interface CDVBackgroundTask : CDVPlugin
 
-@property (nonatomic, assign) NSMutableDictionary *backgroundTasks;
+@property (nonatomic, strong) NSMutableDictionary *backgroundTasks;
 
 - (void)startInBackground:(CDVInvokedUrlCommand*)command;
 - (void)stopInBackground:(CDVInvokedUrlCommand*)command;

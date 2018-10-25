@@ -2,8 +2,6 @@
 
 @implementation CDVBackgroundTaskData
 
-@synthesize backgroundTaskId = _backgroundTaskId, callbackId = _callbackId;
-
 - (CDVBackgroundTaskData*)initWithBackgroundTaskId:(UIBackgroundTaskIdentifier)backgroundTaskId
                                     withCallbackId:(NSString*)callbackId
 {
@@ -37,7 +35,8 @@
 
   CDVBackgroundTaskData* data = [[CDVBackgroundTaskData alloc] initWithBackgroundTaskId:backgroundTaskId
                                                                          withCallbackId:callbackId];
-  [self.backgroundTasks setObject:data forKey:taskId];
+
+    [self.backgroundTasks setValue:data forKey:taskId];
 
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
