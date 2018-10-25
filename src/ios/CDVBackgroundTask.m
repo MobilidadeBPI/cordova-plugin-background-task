@@ -37,7 +37,7 @@
 
   CDVBackgroundTaskData* data = [[CDVBackgroundTaskData alloc] initWithBackgroundTaskId:backgroundTaskId
                                                                          withCallbackId:callbackId];
-  [_backgroundTasks setObject:data forKey:taskId];
+  [self.backgroundTasks setObject:data forKey:taskId];
 
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
@@ -47,10 +47,10 @@
 {
   NSString* taskId = [command.arguments objectAtIndex:0];
 
-  CDVBackgroundTaskData *data = [_backgroundTasks valueForKey:taskId];
+  CDVBackgroundTaskData *data = [self.backgroundTasks valueForKey:taskId];
   [[UIApplication sharedApplication] endBackgroundTask:data.backgroundTaskId];
 
-  [_backgroundTasks removeObjectForKey:taskId];
+  [self.backgroundTasks removeObjectForKey:taskId];
 
   CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
