@@ -21,13 +21,9 @@
 
 @synthesize backgroundTasks = _backgroundTasks;
 
-- (CDVPlugin*)initWithWebView:(UIWebView *)theWebView
+- (void)pluginInitialize
 {
-  self = (CDVBackgroundTask*)[super initWithWebView:(UIWebView*)theWebView];
-  if(self) {
-    self.backgroundTasks = [NSMutableDictionary dictionaryWithCapacity:1];
-  }
-  return self;
+  self.backgroundTasks = [NSMutableDictionary dictionaryWithCapacity:1];
 }
 
 - (void)startInBackground:(CDVInvokedUrlCommand*)command
