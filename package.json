@@ -1,9 +1,9 @@
 {
-  "name": "backgroundtask",
+  "name": "cordova-plugin-backgroundtask",
   "version": "0.3.6",
   "description": "Start and stop background tasks",
   "cordova": {
-    "id": "backgroundtask",
+    "id": "cordova-plugin-backgroundtask",
     "platforms": [
       "ios"
     ]
